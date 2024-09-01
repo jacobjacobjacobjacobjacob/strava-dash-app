@@ -56,4 +56,3 @@ if __name__ == "__main__":
 
     # Process the fetched data
     df = main()
-    
