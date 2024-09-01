@@ -125,7 +125,7 @@ def get_year_dropdown(df: pd.DataFrame) -> html.Div:
             dcc.Dropdown(
                 id=YEAR_DROPDOWN,
                 options=options,
-                value="",
+                value=CURRENT_YEAR,
                 multi=False,
                 clearable=True,
             ),
