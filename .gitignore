@@ -1,0 +1,25 @@
+# Ignore .env file
+.env
+.vscode
+.venv
+
+# Ignore all CSV files
+*.csv
+
+# Ignore Python bytecode files
+__pycache__/
+
+# Ignore IDE specific file
+.idea/
+
+# Ignore macOS specific files
+*.DS_Store
+
+# Ignore Jupyter notebook checkpoints
+.notebooks/
+.ipynb_checkpoints/
+*.ipynb
+
+
+# Health data
+assets/health_data.py
