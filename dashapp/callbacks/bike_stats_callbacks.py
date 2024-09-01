@@ -30,8 +30,11 @@ def register_bike_stats_callbacks(app: Dash, df: pd.DataFrame):
             filtered_df = filtered_df[filtered_df["year"] == int(selected_year)]
 
         # Generate the line chart with the filtered data
-        bike_stats_average_speed_line_chart = get_bike_stats_average_speed_line_chart(
-            filtered_df, selected_year
+        bike_stats_average_speed_line_chart = get_average_metric_line_chart(
+            df=filtered_df,
+            selected_year=selected_year,
+            sport_type="Bike",
+            metric="average_speed",
         )
 
         return (selected_year, bike_stats_average_speed_line_chart)
