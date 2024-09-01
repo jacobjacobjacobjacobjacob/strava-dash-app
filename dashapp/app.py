@@ -23,10 +23,6 @@ from dashapp.layouts.bike_stats import get_bike_stats_layout
 from dashapp.callbacks.overview_callbacks import register_overview_callbacks
 from dashapp.callbacks.bike_stats_callbacks import register_bike_stats_callbacks
 
-from dashapp.components.plots.bike_stats_plots import (
-    get_bike_stats_average_speed_line_chart,
-)
-
 
 """
 DASHBOARD
