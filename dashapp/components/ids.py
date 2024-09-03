@@ -25,6 +25,8 @@ OVERVIEW_EFFORT_SCATTER_CHART = "overview-effort-scatter-chart"
 OVERVIEW_POLAR_CHART = "overview-radar-chart"
 
 BIKE_STATS_AVERAGE_SPEED_LINE_CHART = "bike-stats-average-speed-line-chart"
+BIKE_STATS_AVERAGE_POWER_LINE_CHART = "bike-stats-average-power-line-chart"
+BIKE_STATS_AVERAGE_HR_LINE_CHART = "bike-stats-average-hr-line-chart"
 
 # GENERAL VALUES
 ACTIVITY_COUNT_MONTH = "month-activity-count"
