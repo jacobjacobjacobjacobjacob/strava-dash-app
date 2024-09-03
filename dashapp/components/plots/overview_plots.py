@@ -247,7 +247,7 @@ def get_overview_polar_chart_count_by_day(df: pd.DataFrame, selected_months: lis
 
     # Convert 'date' to datetime and extract relevant parts
     df["date"] = pd.to_datetime(df["date"])
-    df["month"] = df["date"].dt.strftime("%B")  # Get full month name
+    df["month"] = df["date"].dt.strftime("%b")  # Get full month name
     df["day_of_week"] = df["date"].dt.strftime("%a")  # Get abbreviated day name
 
     if selected_months:
@@ -258,8 +258,19 @@ def get_overview_polar_chart_count_by_day(df: pd.DataFrame, selected_months: lis
 
     # Define weekdays to account for months where not all days are present
     all_days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-    df_grouped = df_grouped.set_index("day_of_week").reindex(all_days).reset_index()
-    df_grouped = df_grouped.fillna(0)  # Fill missing values with zero
+
+    # Ensure correct day ordering
+    df_grouped["day_of_week"] = pd.Categorical(
+        df_grouped["day_of_week"], categories=all_days, ordered=True
+    )
+    df_grouped = df_grouped.sort_values("day_of_week")
+
+    # Reindex with all days and fill missing with zeros
+    df_grouped = (
+        df_grouped.set_index("day_of_week")
+        .reindex(all_days, fill_value=0)
+        .reset_index()
+    )
 
     # Create polar radar plot
     fig = px.line_polar(
@@ -273,8 +284,8 @@ def get_overview_polar_chart_count_by_day(df: pd.DataFrame, selected_months: lis
     fig.update_traces(
         fill="toself",
         marker=dict(size=10),
-        line=dict(color="#7eb0d5"),  # Line color
-        fillcolor="#7eb0d5",  # Fill color with transparency
+        line=dict(color="#7eb0d5"),
+        fillcolor="#7eb0d5",
     )
 
     fig.update_layout(
