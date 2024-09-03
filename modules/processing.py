@@ -250,9 +250,7 @@ def add_elevation_rate(df: pd.DataFrame) -> pd.DataFrame:
     """
     df["elevation_rate"] = df.apply(
         lambda row: (
-            (row["distance"] / row["elevation_gain"])
-            if row["elevation_gain"] != 0
-            else 0
+            (row["elevation_gain"] / row["distance"]) if row["distance"] > 0 else 0
         ),
         axis=1,
     )
