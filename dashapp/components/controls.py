@@ -99,7 +99,7 @@ def get_sport_type_checklist(df: pd.DataFrame) -> html.Div:
             dbc.Checklist(
                 id=SPORT_TYPE_CHECKLIST,
                 options=options,
-                value=all_sport_types,
+                value=["Bike", "Run"],
                 style={
                     "display": "grid",
                     "gridTemplateColumns": "1fr 1fr",
