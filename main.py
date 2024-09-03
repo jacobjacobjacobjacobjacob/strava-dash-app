@@ -29,6 +29,7 @@ def main(csv_file: str = "data/raw_data.csv") -> pd.DataFrame:
     :rtype: pd.DataFrame or None
     """
     try:
+
         # Load raw data
         raw_data = create_dataframe(csv_file)
 
@@ -51,8 +52,4 @@ def main(csv_file: str = "data/raw_data.csv") -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    # Fetch fresh Strava data
-    fetch_strava_data()
-
-    # Process the fetched data
     df = main()
