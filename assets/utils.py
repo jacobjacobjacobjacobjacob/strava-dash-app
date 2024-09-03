@@ -122,3 +122,28 @@ MONTH_MAPPING = {
     11: "nov",
     12: "dec",
 }
+
+BIKE_METRICS = [
+    "duration",
+    "distance",
+    "elevation_gain",
+    "average_speed",
+    "average_heartrate",
+    "max_heartrate",
+    "suffer_score",
+    "elevation_rate",
+    "average_watts",
+    "average_cadence",
+]
+RUN_METRICS = [
+    "duration",
+    "distance",
+    "elevation_gain",
+    "average_speed",
+    "average_heartrate",
+    "max_heartrate",
+    "suffer_score",
+    "elevation_rate",
+    "spm",
+    "pace",
+]
