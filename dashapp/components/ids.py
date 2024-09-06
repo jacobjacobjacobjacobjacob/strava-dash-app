@@ -16,6 +16,8 @@ SPORT_TYPE_CHECKLIST = "sport-type-checklist"
 
 # DROPDOWNS
 YEAR_DROPDOWN = "year-dropdown"
+BIKE_METRICS_DROPDOWN = "bike-metrics-dropdown"
+RUN_METRICS_DROPDOWN = "run-metrics-dropdown"
 
 # PLOTS
 OVERVIEW_DURATION_BAR_CHART = "overview-duration-bar-chart"
