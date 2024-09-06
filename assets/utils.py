@@ -135,6 +135,7 @@ BIKE_METRICS = [
     "average_watts",
     "average_cadence",
 ]
+
 RUN_METRICS = [
     "duration",
     "distance",
