@@ -30,6 +30,7 @@ OVERVIEW_POLAR_CHART = "overview-radar-chart"
 BIKE_STATS_AVERAGE_SPEED_LINE_CHART = "bike-stats-average-speed-line-chart"
 BIKE_STATS_AVERAGE_POWER_LINE_CHART = "bike-stats-average-power-line-chart"
 BIKE_STATS_AVERAGE_HR_LINE_CHART = "bike-stats-average-hr-line-chart"
+BIKE_STATS_COMPARISON_CHART = "bike-stats-comparison-chart"
 
 # GENERAL VALUES
 ACTIVITY_COUNT_MONTH = "month-activity-count"
