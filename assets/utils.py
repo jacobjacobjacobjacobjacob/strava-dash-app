@@ -129,7 +129,6 @@ BIKE_METRICS = [
     {"label": "Elevation Gain", "value": "elevation_gain"},
     {"label": "Avg. Speed", "value": "average_speed"},
     {"label": "Avg. Heartrate", "value": "average_heartrate"},
-    {"label": "Max Heartrate", "value": "max_heartrate"},
     {"label": "Suffer Score", "value": "suffer_score"},
     {"label": "Elevation Rate", "value": "elevation_rate"},
     {"label": "Avg. Watts", "value": "average_watts"},
