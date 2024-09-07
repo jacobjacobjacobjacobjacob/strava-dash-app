@@ -13,11 +13,12 @@ MONTH_FILTERING_BUTTON_GROUP = "month-filtering-button-group"
 MONTH_CHECKLIST = "month-checklist"
 YEAR_CHECKLIST = "year-checklist"
 SPORT_TYPE_CHECKLIST = "sport-type-checklist"
+BIKE_METRICS_CHECKLIST = "bike-metrics-checklist"
+RUN_METRICS_CHECKLIST = "run-metrics-checklist"
 
 # DROPDOWNS
 YEAR_DROPDOWN = "year-dropdown"
-BIKE_METRICS_DROPDOWN = "bike-metrics-dropdown"
-RUN_METRICS_DROPDOWN = "run-metrics-dropdown"
+
 
 # PLOTS
 OVERVIEW_DURATION_BAR_CHART = "overview-duration-bar-chart"
