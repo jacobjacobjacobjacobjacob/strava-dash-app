@@ -112,6 +112,21 @@ def get_sport_type_checklist(df: pd.DataFrame) -> html.Div:
         style={"display": "flex", "flexDirection": "row"},
     )
 
+def get_bike_metrics_checklist(df: pd.DataFrame) -> html.Div:
+    return html.Div(
+        children=[
+            dbc.Checklist(
+                id=BIKE_METRICS_CHECKLIST,
+                options=BIKE_METRICS,
+                value=[],   
+                
+                inline=True,
+            ),
+        ],
+        style={"display": "flex", "flexDirection": "column"},
+    )
+
+
 
 # DROPDOWNS
 def get_year_dropdown(df: pd.DataFrame) -> html.Div:
