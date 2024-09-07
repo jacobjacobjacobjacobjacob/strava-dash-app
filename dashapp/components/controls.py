@@ -3,7 +3,7 @@ from dash import html, dcc
 import dash_bootstrap_components as dbc
 import pandas as pd
 
-from assets.utils import CURRENT_MONTH, ALL_MONTHS, CURRENT_YEAR
+from assets.utils import ALL_MONTHS, CURRENT_YEAR, BIKE_METRICS, RUN_METRICS
 from dashapp.components.ids import *
 
 
@@ -127,6 +127,20 @@ def get_year_dropdown(df: pd.DataFrame) -> html.Div:
                 options=options,
                 value=CURRENT_YEAR,
                 multi=False,
+                clearable=True,
+            ),
+        ]
+    )
+
+
+def get_bike_metrics_dropdown(df: pd.DataFrame) -> html.Div:
+    return html.Div(
+        children=[
+            dcc.Dropdown(
+                id=BIKE_METRICS_DROPDOWN,
+                options=BIKE_METRICS,
+                value=None,
+                multi=True,
                 clearable=True,
             ),
         ]
