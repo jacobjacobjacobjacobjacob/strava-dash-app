@@ -124,17 +124,18 @@ MONTH_MAPPING = {
 }
 
 BIKE_METRICS = [
-    "duration",
-    "distance",
-    "elevation_gain",
-    "average_speed",
-    "average_heartrate",
-    "max_heartrate",
-    "suffer_score",
-    "elevation_rate",
-    "average_watts",
-    "average_cadence",
+    {"label": "Duration", "value": "duration"},
+    {"label": "Distance", "value": "distance"},
+    {"label": "Elevation Gain", "value": "elevation_gain"},
+    {"label": "Avg. Speed", "value": "average_speed"},
+    {"label": "Avg. Heartrate", "value": "average_heartrate"},
+    {"label": "Max Heartrate", "value": "max_heartrate"},
+    {"label": "Suffer Score", "value": "suffer_score"},
+    {"label": "Elevation Rate", "value": "elevation_rate"},
+    {"label": "Avg. Watts", "value": "average_watts"},
+    {"label": "Avg. Cadence", "value": "average_cadence"},
 ]
+
 
 RUN_METRICS = [
     "duration",
