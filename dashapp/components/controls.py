@@ -112,19 +112,20 @@ def get_sport_type_checklist(df: pd.DataFrame) -> html.Div:
         style={"display": "flex", "flexDirection": "row"},
     )
 
+
 def get_bike_metrics_checklist(df: pd.DataFrame) -> html.Div:
     return html.Div(
         children=[
             dbc.Checklist(
                 id=BIKE_METRICS_CHECKLIST,
                 options=BIKE_METRICS,
-                value=[],   
-                
+                value=[],
                 inline=True,
             ),
         ],
         style={"display": "flex", "flexDirection": "column"},
     )
+
 
 def get_environment_checklist(df: pd.DataFrame) -> html.Div:
     options = df["environment"].unique()
@@ -133,13 +134,12 @@ def get_environment_checklist(df: pd.DataFrame) -> html.Div:
             dbc.Checklist(
                 id=ENVIRONMENT_CHECKLIST,
                 options=options,
-                value=options,   
+                value=options,
                 inline=True,
             ),
         ],
         style={"display": "flex", "flexDirection": "column"},
     )
-
 
 
 # DROPDOWNS
