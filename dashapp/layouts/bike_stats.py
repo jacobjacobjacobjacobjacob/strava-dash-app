@@ -24,7 +24,7 @@ def get_bike_stats_layout(**controls):
                             dbc.CardBody(
                                 html.Div(
                                     children=[
-                                        html.H5("Average Speed"),
+                                        html.H4("Average Speed"),
                                         dcc.Graph(
                                             id=BIKE_STATS_AVERAGE_SPEED_LINE_CHART,
                                             style={
@@ -44,11 +44,13 @@ def get_bike_stats_layout(**controls):
                             dbc.CardBody(
                                 html.Div(
                                     children=[
-                                        html.H5("Average Power"),
-                                        html.H5("Small Box 2"),
-                                        html.H5("Small Box 2"),
-                                        html.H5("Small Box 2"),
-                                        html.H5("Small Box 2"),
+                                        html.H4("Average Power"),
+                                        dcc.Graph(
+                                            id=BIKE_STATS_AVERAGE_POWER_LINE_CHART,
+                                            style={
+                                                "width": "450px",
+                                            },
+                                        ),
                                     ],
                                     className="text-center",
                                 )
@@ -62,11 +64,13 @@ def get_bike_stats_layout(**controls):
                             dbc.CardBody(
                                 html.Div(
                                     children=[
-                                        html.H5("Average HR."),
-                                        html.H5("Small Box 3"),
-                                        html.H5("Small Box 3"),
-                                        html.H5("Small Box 3"),
-                                        html.H5("Small Box 3"),
+                                        html.H4("Average HR"),
+                                        dcc.Graph(
+                                            id=BIKE_STATS_AVERAGE_HR_LINE_CHART,
+                                            style={
+                                                "width": "450px",
+                                            },
+                                        ),
                                     ],
                                     className="text-center",
                                 )
@@ -85,17 +89,15 @@ def get_bike_stats_layout(**controls):
                             dbc.CardBody(
                                 html.Div(
                                     children=[
-                                        html.H5("Controls"),
+                                        html.H4("Controls"),
+                                        html.H5("Year"),
                                         controls["year_dropdown"],
-                                        html.H5("Controls"),
-                                        html.H5("Controls"),
-                                        html.H5("Controls"),
-                                        html.H5("Controls"),
-                                        html.H5("Controls"),
-                                        html.H5("Controls"),
-                                        html.H5("Controls"),
-                                        html.H5("Controls"),
-                                        html.H5("Controls"),
+                                        html.Br(),
+                                        html.H5("Metrics"),
+                                        controls["bike_metrics_checklist"],
+                                        html.Br(),
+                                        html.H5("Environment"),
+                                        controls["environment_checklist"],
                                     ],
                                     className="text-center",
                                 )
@@ -111,19 +113,13 @@ def get_bike_stats_layout(**controls):
                             dbc.CardBody(
                                 html.Div(
                                     children=[
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
+                                        html.H4("Comparison"),
+                                        dcc.Graph(
+                                            id=BIKE_STATS_COMPARISON_CHART,
+                                            style={
+                                                "width": "700px",
+                                            },
+                                        ),
                                     ],
                                     className="text-center",
                                 )
