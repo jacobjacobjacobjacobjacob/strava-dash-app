@@ -26,7 +26,7 @@ def get_strava_activities() -> None:
     try:
         response = requests.get(activities_url, headers=headers, params=params)
         response.raise_for_status()  # Raise exception for non-200 status codes
-
+        logger.info(f"API call successfull.")
         return response.json()  # Return the list of activities as JSON
     except requests.exceptions.RequestException as e:
         logger.error(f"Error occurred while fetching activities: {e}")
