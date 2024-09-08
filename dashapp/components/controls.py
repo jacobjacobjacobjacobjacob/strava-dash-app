@@ -126,6 +126,20 @@ def get_bike_metrics_checklist(df: pd.DataFrame) -> html.Div:
         style={"display": "flex", "flexDirection": "column"},
     )
 
+def get_environment_checklist(df: pd.DataFrame) -> html.Div:
+    options = df["environment"].unique()
+    return html.Div(
+        children=[
+            dbc.Checklist(
+                id=ENVIRONMENT_CHECKLIST,
+                options=options,
+                value=options,   
+                inline=True,
+            ),
+        ],
+        style={"display": "flex", "flexDirection": "column"},
+    )
+
 
 
 # DROPDOWNS

@@ -15,6 +15,7 @@ YEAR_CHECKLIST = "year-checklist"
 SPORT_TYPE_CHECKLIST = "sport-type-checklist"
 BIKE_METRICS_CHECKLIST = "bike-metrics-checklist"
 RUN_METRICS_CHECKLIST = "run-metrics-checklist"
+ENVIRONMENT_CHECKLIST = "environment-checklist"
 
 # DROPDOWNS
 YEAR_DROPDOWN = "year-dropdown"
