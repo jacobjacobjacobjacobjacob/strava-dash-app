@@ -90,13 +90,20 @@ def get_comparison_chart(
     # Filter by sport_type
     df_filtered = df[df["sport_type"] == sport_type].copy()
 
-    # Filter and clean data for both metrics
-    df_filtered_1 = df_filtered.loc[df_filtered[metric_1] > 0].dropna(subset=[metric_1])
-    df_filtered_2 = df_filtered.loc[df_filtered[metric_2] > 0].dropna(subset=[metric_2])
+    # Check if metric_1 is "activities", if yes, count activities
+    if metric_1 == "activities":
+        monthly_average_1 = df_filtered.resample("ME").size().reset_index(name=metric_1)
+    else:
+        df_filtered_1 = df_filtered.loc[df_filtered[metric_1] > 0].dropna(subset=[metric_1])
+        monthly_average_1 = df_filtered_1[metric_1].resample("ME").mean().reset_index()
 
-    # Resample by month and calculate mean for both metrics
-    monthly_average_1 = df_filtered_1[metric_1].resample("ME").mean().reset_index()
-    monthly_average_2 = df_filtered_2[metric_2].resample("ME").mean().reset_index()
+    # Check if metric_2 is "activities", if yes, count activities
+    if metric_2 == "activities":
+        monthly_average_2 = df_filtered.resample("ME").size().reset_index(name=metric_2)
+    else:
+        df_filtered_2 = df_filtered.loc[df_filtered[metric_2] > 0].dropna(subset=[metric_2])
+        monthly_average_2 = df_filtered_2[metric_2].resample("ME").mean().reset_index()
+
 
     # Rename the date columns
     monthly_average_1.rename(
