@@ -124,6 +124,7 @@ MONTH_MAPPING = {
 }
 
 BIKE_METRICS = [
+    {"label": "Activities", "value": "activities"},
     {"label": "Duration", "value": "duration"},
     {"label": "Distance", "value": "distance"},
     {"label": "Elevation Gain", "value": "elevation_gain"},
