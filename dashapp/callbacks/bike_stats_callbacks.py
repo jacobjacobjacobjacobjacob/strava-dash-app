@@ -3,7 +3,7 @@ from dash import Input, Output, State, Dash, callback_context
 import pandas as pd
 
 from assets.utils import ALL_MONTHS, CURRENT_MONTH
-from dashapp.components.plots.bike_stats_plots import *
+from dashapp.components.plots.stats_plots import *
 from dashapp.components.ids import *
 
 

@@ -9,11 +9,10 @@ import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
 import pandas as pd
 
-from main import main as refresh_strava_data
+from main import main
+from assets.config import STRAVA_DATA_PATH
 from api.update_data import fetch_strava_data
 
-
-from assets.config import STRAVA_DATA_PATH
 from dashapp.components.controls import *
 
 from dashapp.layouts.overview import get_overview_layout
@@ -29,6 +28,8 @@ DASHBOARD
 """
 
 # Load Strava Data
+#fetch_strava_data()
+#df = main()
 df = pd.read_csv(STRAVA_DATA_PATH)
 
 
@@ -37,9 +38,9 @@ app = Dash(
     __name__,
     suppress_callback_exceptions=True,
     external_stylesheets=[
-        # dbc.themes.COSMO,
-        # dbc.themes.YETI,
-        dbc.themes.MINTY,
+        dbc.themes.COSMO,
+        #dbc.themes.YETI,
+        #dbc.themes.MINTY,
         dbc.icons.FONT_AWESOME,
     ],
 )
@@ -65,7 +66,8 @@ app.layout = dbc.Container(
 def update_data(n_clicks):
     if n_clicks:
         fetch_strava_data()
-        refresh_strava_data()
+        main()
+        df = pd.read_csv(STRAVA_DATA_PATH)
         return dbc.Alert(
             "Data updated.",
             color="success",
@@ -96,12 +98,14 @@ def display_page(pathname: str):
         return get_goals_layout(df)
 
     elif pathname == "/stats/bike":
-        return get_bike_stats_layout(year_dropdown=get_year_dropdown(df))
+        return get_bike_stats_layout(
+            year_dropdown=get_year_dropdown(df),
+            bike_metrics_checklist=get_bike_metrics_checklist(df),
+            environment_checklist=get_environment_checklist(df),
+        )
     elif pathname == "/stats/run":
         pass
     elif pathname == "/data":
         pass
     else:
         return html.H1("PAGE NOT FOUND")
-
-

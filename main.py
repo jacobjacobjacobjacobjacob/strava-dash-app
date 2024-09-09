@@ -2,7 +2,6 @@
 import pandas as pd
 import logging
 
-from api.update_data import fetch_strava_data
 from assets.utils import create_dataframe, save_to_csv
 from modules.processing import clean_data
 
@@ -29,7 +28,6 @@ def main(csv_file: str = "data/raw_data.csv") -> pd.DataFrame:
     :rtype: pd.DataFrame or None
     """
     try:
-
         # Load raw data
         raw_data = create_dataframe(csv_file)
 
