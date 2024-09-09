@@ -30,6 +30,13 @@ navbar = dbc.NavbarSimple(
                             )
                         ),
                         dbc.NavItem(
+                            dcc.Link(
+                                "COMPARE",
+                                href="/compare",
+                                className="nav-link",
+                            )
+                        ),
+                        dbc.NavItem(
                             dbc.DropdownMenu(
                                 label="STATS",
                                 nav=True,
@@ -46,6 +53,13 @@ navbar = dbc.NavbarSimple(
                                         dcc.Link(
                                             "Run",
                                             href="/stats/run",
+                                            className="dropdown-item",
+                                        )
+                                    ),
+                                    dbc.DropdownMenuItem(
+                                        dcc.Link(
+                                            "Health",
+                                            href="/stats/health",
                                             className="dropdown-item",
                                         )
                                     ),
