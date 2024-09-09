@@ -63,11 +63,9 @@ def get_average_metric_line_chart(
             ticktext=ticktext,
             tickangle=-45,
             tickmode="array",
-            showgrid=False
+            showgrid=False,
         ),
-        yaxis=dict(
-            showgrid=False
-        )
+        yaxis=dict(showgrid=False),
     )
 
     # Apply plot styles
@@ -94,16 +92,19 @@ def get_comparison_chart(
     if metric_1 == "activities":
         monthly_average_1 = df_filtered.resample("ME").size().reset_index(name=metric_1)
     else:
-        df_filtered_1 = df_filtered.loc[df_filtered[metric_1] > 0].dropna(subset=[metric_1])
+        df_filtered_1 = df_filtered.loc[df_filtered[metric_1] > 0].dropna(
+            subset=[metric_1]
+        )
         monthly_average_1 = df_filtered_1[metric_1].resample("ME").mean().reset_index()
 
     # Check if metric_2 is "activities", if yes, count activities
     if metric_2 == "activities":
         monthly_average_2 = df_filtered.resample("ME").size().reset_index(name=metric_2)
     else:
-        df_filtered_2 = df_filtered.loc[df_filtered[metric_2] > 0].dropna(subset=[metric_2])
+        df_filtered_2 = df_filtered.loc[df_filtered[metric_2] > 0].dropna(
+            subset=[metric_2]
+        )
         monthly_average_2 = df_filtered_2[metric_2].resample("ME").mean().reset_index()
-
 
     # Rename the date columns
     monthly_average_1.rename(
@@ -140,7 +141,7 @@ def get_comparison_chart(
             name=metric_2,
             mode="lines+markers",
             line=dict(color="#fd7f6f"),
-        ), 
+        ),
         secondary_y=True,
     )
 
@@ -150,28 +151,19 @@ def get_comparison_chart(
 
     # Update layout with both y-axes
     fig.update_layout(
-    margin=dict(l=0, r=0, t=10, b=0),
-    width=700,
-    height=450,
-    xaxis=dict(
-        tickvals=tickvals,
-        ticktext=ticktext,
-        tickangle=-45,
-        tickmode="array",
-        showgrid=False  
-    ),
-    yaxis=dict(
-        title=None,
-        showgrid=False  
-    ),
-    yaxis2=dict(
-        title=None,
-        overlaying="y",
-        side="right",
-        showgrid=False  
+        margin=dict(l=0, r=0, t=10, b=0),
+        width=700,
+        height=450,
+        xaxis=dict(
+            tickvals=tickvals,
+            ticktext=ticktext,
+            tickangle=-45,
+            tickmode="array",
+            showgrid=False,
+        ),
+        yaxis=dict(title=None, showgrid=False),
+        yaxis2=dict(title=None, overlaying="y", side="right", showgrid=False),
     )
-)
-
 
     # Apply plot styles
     fig = apply_plot_styles(fig, LINE_CHART_PLOT_STYLE)
