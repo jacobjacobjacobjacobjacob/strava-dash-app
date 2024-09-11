@@ -1,6 +1,7 @@
 # Ignore .env file
 .env
 .vscode
+venv
 .venv
 
 # Ignore all CSV files
