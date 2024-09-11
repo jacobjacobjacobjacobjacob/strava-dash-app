@@ -3,6 +3,7 @@ import pandas as pd
 import logging
 
 from assets.utils import create_dataframe, save_to_csv
+from api.update_data import fetch_strava_data
 from modules.processing import clean_data
 
 # Configure logging

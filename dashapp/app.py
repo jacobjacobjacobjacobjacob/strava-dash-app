@@ -38,9 +38,9 @@ app = Dash(
     __name__,
     suppress_callback_exceptions=True,
     external_stylesheets=[
-        dbc.themes.COSMO,
+        #dbc.themes.COSMO,
         #dbc.themes.YETI,
-        #dbc.themes.MINTY,
+        dbc.themes.MINTY,
         dbc.icons.FONT_AWESOME,
     ],
 )
