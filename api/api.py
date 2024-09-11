@@ -31,3 +31,5 @@ def get_strava_activities() -> None:
     except requests.exceptions.RequestException as e:
         logger.error(f"Error occurred while fetching activities: {e}")
         return None  # Return None if the request fails
+
+get_strava_activities()
