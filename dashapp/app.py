@@ -18,6 +18,7 @@ from dashapp.components.controls import *
 from dashapp.layouts.overview import get_overview_layout
 from dashapp.layouts.goals import get_goals_layout
 from dashapp.layouts.bike_stats import get_bike_stats_layout
+from dashapp.layouts.last_activity import get_last_activity_layout
 
 from dashapp.callbacks.overview_callbacks import register_overview_callbacks
 from dashapp.callbacks.bike_stats_callbacks import register_bike_stats_callbacks
@@ -93,7 +94,7 @@ def display_page(pathname: str):
             month_filtering_button_group=get_month_filtering_button_group(),
         )
     elif pathname == "/last_activity":
-        pass
+        return get_last_activity_layout()
     elif pathname == "/goals":
         return get_goals_layout(df)
 
