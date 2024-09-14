@@ -48,6 +48,8 @@ def main(csv_file: str = "data/raw_data.csv") -> pd.DataFrame:
     except Exception as e:
         logger.error("An error occurred during processing:", exc_info=True)
         return None
+    
+    print("main func runs")
 
 
 if __name__ == "__main__":
