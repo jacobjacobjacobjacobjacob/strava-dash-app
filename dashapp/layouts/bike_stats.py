@@ -24,7 +24,7 @@ def get_bike_stats_layout(**controls):
                             dbc.CardBody(
                                 html.Div(
                                     children=[
-                                        html.H4("Average Speed"),
+                                        html.H4("Speed (kph)"),
                                         dcc.Graph(
                                             id=BIKE_STATS_AVERAGE_SPEED_LINE_CHART,
                                             style={
@@ -44,7 +44,7 @@ def get_bike_stats_layout(**controls):
                             dbc.CardBody(
                                 html.Div(
                                     children=[
-                                        html.H4("Average Power"),
+                                        html.H4("Power (w)"),
                                         dcc.Graph(
                                             id=BIKE_STATS_AVERAGE_POWER_LINE_CHART,
                                             style={
@@ -64,7 +64,7 @@ def get_bike_stats_layout(**controls):
                             dbc.CardBody(
                                 html.Div(
                                     children=[
-                                        html.H4("Average HR"),
+                                        html.H4("Heartrate (bpm)"),
                                         dcc.Graph(
                                             id=BIKE_STATS_AVERAGE_HR_LINE_CHART,
                                             style={
@@ -181,140 +181,3 @@ def get_bike_stats_layout(**controls):
         ],
         fluid=True,
     )
-
-
-"""
-ALTERNATIV 1:
-def get_bike_stats_layout():
-    return dbc.Container(
-        [
-            # Navbar
-            navbar,
-            dbc.Row(
-                [
-                    # Top row with 4 small boxes
-                    dbc.Col(
-                        dbc.Card(
-                            dbc.CardBody(
-                                html.Div(
-                                    children=[
-                                        html.H5("Small Box 1"),
-                                    ],
-                                    className="text-center",
-                                )
-                            ),
-                            color="light",
-                        ),
-                        width=3,
-                    ),
-                    dbc.Col(
-                        dbc.Card(
-                            dbc.CardBody(
-                                html.Div(
-                                    children=[
-                                        html.H5("Small Box 2"),
-                                    ],
-                                    className="text-center",
-                                )
-                            ),
-                            color="light",
-                        ),
-                        width=3,
-                    ),
-                    dbc.Col(
-                        dbc.Card(
-                            dbc.CardBody(
-                                html.Div(
-                                    children=[
-                                        html.H5("Small Box 3"),
-                                    ],
-                                    className="text-center",
-                                )
-                            ),
-                            color="light",
-                        ),
-                        width=3,
-                    ),
-                    dbc.Col(
-                        dbc.Card(
-                            dbc.CardBody(
-                                html.Div(
-                                    children=[
-                                        html.H5("Small Box 4"),
-                                    ],
-                                    className="text-center",
-                                )
-                            ),
-                            color="light",
-                        ),
-                        width=3,
-                    ),
-                ],
-                className="sport-type-stats-card",
-            ),
-            dbc.Row(
-                [
-                    # Large box spanning 2 rows and 3 columns
-                    dbc.Col(
-                        dbc.Card(
-                            dbc.CardBody(
-                                html.Div(
-                                    children=[
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                        html.H5("Large box spanning"),
-                                    ],
-                                    className="text-center",
-                                )
-                            ),
-                            color="light",
-                        ),
-                        width=9,
-                        style={"grid-row": "span 2"},  # Span across 2 rows
-                    ),
-                    dbc.Col(
-                        [
-                            dbc.Row(
-                                dbc.Col(
-                                    dbc.Card(
-                                        dbc.CardBody(
-                                            html.Div(
-                                                children=[
-                                                    html.H5("Small Box 5"),
-                                                ],
-                                                className="text-center",
-                                            )
-                                        ),
-                                        color="light",
-                                    ),
-                                    className="sport-type-stats-card",
-                                ),
-                            ),
-                            dbc.Row(
-                                dbc.Col(
-                                    dbc.Card(
-                                        dbc.CardBody(
-                                            html.Div(
-                                                children=[
-                                                    html.H5("Small Box 6"),
-                                                ],
-                                                className="text-center",
-                                            )
-                                        ),
-                                        color="light",
-                                    ),
-                                ),
-                            ),
-                        ],
-                        width=3,
-                    ),
-                ],
-            ),
-        ],
-        fluid=True,
-    )
-"""
