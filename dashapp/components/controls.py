@@ -119,7 +119,7 @@ def get_bike_metrics_checklist(df: pd.DataFrame) -> html.Div:
             dbc.Checklist(
                 id=BIKE_METRICS_CHECKLIST,
                 options=BIKE_METRICS,
-                value=[],
+                value=["average_speed", "distance"],
                 inline=True,
             ),
         ],
