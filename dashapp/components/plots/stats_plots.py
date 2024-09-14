@@ -121,6 +121,7 @@ def get_comparison_chart(
     # Create a figure with secondary y-axis
     fig = make_subplots(specs=[[{"secondary_y": True}]])
 
+
     # Add the first metric line
     fig.add_trace(
         go.Scatter(
