@@ -11,7 +11,7 @@ import pandas as pd
 
 from main import main
 from assets.config import STRAVA_DATA_PATH
-from api.update_data import fetch_strava_data
+from api.api import get_strava_activities
 
 from dashapp.components.controls import *
 
@@ -65,7 +65,7 @@ app.layout = dbc.Container(
 )
 def update_data(n_clicks):
     if n_clicks:
-        fetch_strava_data()
+        get_strava_activities()
         main()
         df = pd.read_csv(STRAVA_DATA_PATH)
         return dbc.Alert(
