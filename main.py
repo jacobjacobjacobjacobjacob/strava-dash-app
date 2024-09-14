@@ -3,7 +3,6 @@ import pandas as pd
 import logging
 
 from assets.utils import create_dataframe, save_to_csv
-from api.update_data import fetch_strava_data
 from modules.processing import clean_data
 
 # Configure logging
@@ -48,8 +47,6 @@ def main(csv_file: str = "data/raw_data.csv") -> pd.DataFrame:
     except Exception as e:
         logger.error("An error occurred during processing:", exc_info=True)
         return None
-    
-    print("main func runs")
 
 
 if __name__ == "__main__":
