@@ -4,3 +4,4 @@ pandas~=2.2.2
 pytz~=2024.1
 dash~=2.17.1
 plotly
+dash_bootstrap_components
