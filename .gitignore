@@ -3,6 +3,7 @@
 .vscode
 venv
 .venv
+api/.env
 
 # Ignore all CSV files
 *.csv

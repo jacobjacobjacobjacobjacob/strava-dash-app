@@ -2,7 +2,7 @@
 import pytz
 import logging
 
-STRAVA_DATA_PATH = "/Users/djs/Desktop/strava-dash-app/data/clean_data.csv"
+STRAVA_DATA_PATH = "/Users/daniel/Desktop/python/strava-dash-app/data/clean_data.csv"
 DASHAPP_TITLE = "Strava Dashboard"
 
 BIKE_DURATION_GOAL_2024 = 200
