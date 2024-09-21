@@ -9,9 +9,8 @@ from assets.config import setup_logging
 setup_logging()
 logger = logging.getLogger(__name__)
 
-# Use absolute path to .env file
-env_file_path = '/Users/djs/Desktop/strava-dash-app/api/.env'
-load_dotenv(dotenv_path=env_file_path)
+# Load enviroment files
+load_dotenv()
 strava_client_id = os.getenv("STRAVA_CLIENT_ID")
 strava_client_secret = os.getenv("STRAVA_CLIENT_SECRET")
 strava_refresh_token = os.getenv("STRAVA_REFRESH_TOKEN")
